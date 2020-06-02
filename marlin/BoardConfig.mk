@@ -3,8 +3,8 @@
 # Product-specific compile-time definitions
 #
 
-# Allow Lineage config to override others
--include device/google/marlin/marlin/BoardConfigLineage.mk
+# Allow Potato config to override others
+-include device/google/marlin/marlin/BoardConfigPotato.mk
 
 TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOOTLOADER_BOARD_NAME := marlin
@@ -102,7 +102,7 @@ BOARD_ROOT_EXTRA_FOLDERS := firmware firmware/radio persist
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 
 BOARD_SEPOLICY_DIRS += device/google/marlin/sepolicy
-ifneq ($(filter lineage_marlin marlin marlinf, $(TARGET_PRODUCT)),)
+ifneq ($(filter Potato_marlin marlin marlinf, $(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += device/google/marlin/sepolicy/verizon
 endif
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := device/google/marlin/sepolicy/public
